@@ -1,0 +1,155 @@
+* {
+   -fx-base-color: rgb(31.0, 31.0, 31.0);
+   -fx-red-color:  rgb(232.0, 17.0, 35.0);
+}
+
+#main {
+	-fx-background-color: linear-gradient(to bottom right, #0095ff, #9dd6ff);
+}
+
+#topToolbar, #statusContainer {
+	-fx-padding: 3.0 5.0 3.0 5.0;
+	-fx-background-color: rgb(31.0, 31.0, 31.0);
+}
+
+#statusContainer {
+	-fx-alignment: CENTER_LEFT;
+	-fx-spacing: 10.0px;
+}
+
+#statusContainer FontIcon, #statusContainer SpinningFontIcon {
+	-fx-icon-size: 16.0px;
+	-fx-icon-color: WHITE;
+}
+
+#errorIcon {
+	-fx-icon-color: -fx-red-color;
+}
+
+#statusContainer JFXButton {
+	-fx-padding: 0.0;
+}
+
+#forecastsGrid {
+	-fx-padding: 10.0px;
+	-fx-vgap: 5.0px;
+	-fx-hgap: 5.0px;
+}
+
+.forecast {
+	-fx-background-color: rgba(255.0, 255.0, 255.0, 0.8);
+
+}
+
+.forecast-icon-container {
+	-fx-background-color: rgba(255.0, 255.0, 255.0, 0.95);
+	-fx-pref-width: 80.0px;
+	-fx-max-width: 80.0px;
+}
+
+.forecast-icon-container2 {
+    -fx-background-color: transparent;
+}
+
+.forecast-image {
+    -fx-pref-width: 200.0px;
+}
+
+.forecast-icon {
+	-fx-icon-size: 64.0px;
+	-fx-icon-color: YELLOW;
+}
+
+.value-container {
+	-fx-alignment: BASELINE_LEFT;
+	-fx-spacing: 40.0;
+}
+
+.value-container2 {
+	-fx-alignment: BASELINE_LEFT;
+	-fx-spacing: 5.0;
+}
+
+.forecast-value {
+	-fx-font-size: 100.0;
+	-fx-font-weight: bold;
+	-fx-fill: WHITE;
+	-fx-padding: 0.0;
+}
+
+.forecast-value2 {
+	-fx-font-size: 25.0;
+	-fx-font-weight: bold;
+	-fx-fill: WHITE;
+	-fx-padding: 0.0;
+}
+
+.no-data {
+	-fx-icon-size: 50.0px;
+	-fx-icon-color: GRAY;
+}
+
+.no-data2 {
+	-fx-icon-size: 30.0px;
+	-fx-icon-color: GRAY;
+}
+
+.helper-label {
+	-fx-fill: GRAY;
+	-fx-font-weight: bold;
+	-fx-font-size: 50.0;
+}
+
+.helper-label2 {
+ 	-fx-fill: GRAY;
+ 	-fx-font-weight: bold;
+ 	-fx-font-size: 12.0;
+ }
+
+.chevron-up, .chevron-down {
+	-fx-icon-size: 14.0;
+}
+
+.chevron-up {
+	-fx-icon-color: -green-700;
+}
+
+.chevron-down {
+	-fx-icon-color: -fx-red-color;
+}
+
+.tooltip Text {
+	-fx-fill: WHITE;
+	-fx-font-size: 14.0;
+}
+
+.tooltip FontIcon {
+	-fx-icon-color: WHITE;
+	-fx-icon-size: 16.0;
+}
+
+.tooltip HBox {
+	-fx-spacing: 5.0px;
+	-fx-alignment: BASELINE_LEFT;
+}
+
+.tooltip VBox {
+	-fx-spacing: 5.0px;
+}
+
+.chart-series-area-line {
+    -fx-stroke-width: 3.0px;
+}
+
+.default-color0.chart-series-area-line {
+	-fx-stroke: #03A9F4;
+}
+
+.default-color0.chart-series-area-fill {
+	-fx-fill: rgba(3.0, 169.0, 244.0, 0.15);
+}
+
+
+.default-color0.chart-area-symbol {
+	-fx-background-color: #03A9F4, WHITE;
+}

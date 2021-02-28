@@ -1,0 +1,130 @@
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import javafx.scene.layout.Region?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.SVGPath?>
+<?import pl.edu.mimuw.weather.control.SpinningFontIcon?>
+<?import pl.edu.mimuw.weather.control.ForecastPane?>
+<?import pl.edu.mimuw.weather.control.ForecastValueControl?>
+
+<?import pl.edu.mimuw.weather.control.ForecastPaneExtended?>
+<?import pl.edu.mimuw.weather.control.ForecastValueExtendedControl?>
+<?import pl.edu.mimuw.weather.control.ForecastValueExtendedControl2?>
+<?import pl.edu.mimuw.weather.control.ForecastImagePane?>
+<?import pl.edu.mimuw.weather.control.ForecastImageControl?>
+<?import javafx.scene.text.Text?>
+<StackPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.112-ea"
+           fx:controller="pl.edu.mimuw.weather.controller.WeatherAppController"
+           id="main" stylesheets="@../css/weather.css" styleClass="body1">
+
+    <BorderPane>
+        <center>
+            <GridPane id="forecastsGrid">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="50" />
+                    <ColumnConstraints percentWidth="50" />
+                </columnConstraints>
+
+                <rowConstraints>
+                    <RowConstraints percentHeight="15" />
+                    <RowConstraints percentHeight="45" />
+                    <RowConstraints percentHeight="40" />
+                </rowConstraints>
+                <StackPane GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="2">
+                    <Text text="Warsaw, Poland" styleClass="forecast-value2" style="@/css/weather.css"></Text>
+                </StackPane>
+
+                <ForecastImagePane GridPane.rowIndex="1" GridPane.columnIndex="0">
+                    <images>
+                        <ForecastImageControl fx:id="forecastImageControl"
+                                              source="$controller.forecastImage" title="forecastImage" />
+                    </images>
+                </ForecastImagePane>
+
+                <ForecastPane GridPane.rowIndex="1" GridPane.columnIndex="1">
+                    <forecasts>
+                        <ForecastValueControl fx:id="temperatureControl"
+                                              source="$controller.cityTemperature" title="Temperature" />
+                    </forecasts>
+                    <forecasts>
+                        <ForecastValueExtendedControl2 fx:id="cloudinessControl"
+                                                       source="$controller.cityCloudiness" prefix="Cloudiness: "
+                                                       title="Cloudiness" />
+                    </forecasts>
+
+                </ForecastPane>
+
+                <ForecastPaneExtended GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.columnSpan="2">
+                    <forecasts>
+                        <ForecastValueExtendedControl fx:id="pressureControl"
+                                                      source="$controller.cityPressure" prefix="Pressure: "
+                                                      suffix="hPa" title="Pressure" />
+                    </forecasts>
+
+                    <forecasts>
+                        <ForecastValueExtendedControl fx:id="humidityControl"
+                                                      source="$controller.cityHumidity" prefix="Humidity: "
+                                                      suffix=" %" title="Humidity" />
+                    </forecasts>
+
+                    <forecasts>
+                        <ForecastValueExtendedControl fx:id="windSpeedControl"
+                                                      source="$controller.cityWindSpeed" prefix="Wind Speed: "
+                                                      suffix="m/s" format="0.0"
+                                                      title="WindSpeed" />
+                    </forecasts>
+
+                    <forecasts>
+                        <ForecastValueExtendedControl fx:id="windDegControl"
+                                                      source="$controller.cityWindDeg" prefix="Wind Degree: "
+                                                      suffix="&#xB0;" title="WindDeg" />
+                    </forecasts>
+
+
+                    <forecasts>
+                        <ForecastValueExtendedControl fx:id="PM10Control"
+                                                      source="$controller.cityPM10" prefix="PM 10: "
+                                                      suffix="µg/m&#179;" title="PM10" />
+                    </forecasts>
+
+                    <forecasts>
+                        <ForecastValueExtendedControl fx:id="PM25Control"
+                                                      source="$controller.cityPM25" prefix="PM 2.5: "
+                                                      suffix="µg/m&#179;" title="PM25" />
+                    </forecasts>
+                </ForecastPaneExtended>
+            </GridPane>
+        </center>
+
+        <bottom>
+            <HBox id="statusContainer">
+                <JFXButton fx:id="settingsButton">
+                    <graphic>
+                        <FontIcon iconLiteral="fa-wrench" />
+                    </graphic>
+                </JFXButton>
+                <JFXButton fx:id="refreshButton">
+                    <graphic>
+                        <FontIcon iconLiteral="fa-refresh" />
+                    </graphic>
+                </JFXButton>
+                <JFXButton fx:id="changeSourceButton">
+                    <graphic>
+                        <FontIcon iconLiteral="fa-arrow-right"/>
+                    </graphic>
+                </JFXButton>
+                <Region HBox.hgrow="ALWAYS" />
+                <FontIcon fx:id="errorIcon" iconLiteral="fa-exclamation-triangle" />
+                <SpinningFontIcon fx:id="workingIcon" iconLiteral="fa-cog" />
+            </HBox>
+        </bottom>
+
+    </BorderPane>
+
+</StackPane>
